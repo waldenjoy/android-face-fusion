@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.wjpv.androidfacefusion"
+    namespace = "com.pv.androidfacefusion"
     compileSdk {
         version = release(36)
     }
