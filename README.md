@@ -1,6 +1,11 @@
 # Android Face Fusion
 
-Android app for face swapping using ONNX models on-device. Port of the Python [FaceFusion](https://github.com/facefusion/facefusion) pipeline.
+Android app for face swapping using ONNX models on-device. Now with NNAPI speedups!
+Port of the Python [FaceFusion](https://github.com/facefusion/facefusion) pipeline.
+
+NNAPI speedups are in Face detection (SCRFD) and Face embedding (ArcFace). This provides a 5-6 seconds decrease in the time it takes to swap the face. Since I vibe-coded most of the changes, i didn't tackle changing INSWapper. 
+
+If NNAPI support is not availabe on your device, it should drop back to CPU; I did not test that though.
 
 ## Quick Start
 
@@ -8,6 +13,9 @@ Android app for face swapping using ONNX models on-device. Port of the Python [F
 2. On first launch, models auto-download from HuggingFace (~739 MB)
 3. Select source image (face to use) and target image (face to replace)
 4. Tap **Swap Faces**
+
+## Releases
+Android release should be available to the right.
 
 ## Models
 
@@ -94,3 +102,4 @@ The authors are not responsible for any misuse of this software.
 
 - [FaceFusion](https://github.com/facefusion/facefusion) - Original Python implementation
 - [InsightFace](https://github.com/deepinsight/insightface) - Face analysis models
+- [Parasaran-Python](https://github.com/Parasaran-Python/android-face-fusion) - For their Android conversion work
