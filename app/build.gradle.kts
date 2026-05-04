@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.pv.androidfacefusion"
+    namespace = "com.wjpv.androidfacefusion"
     compileSdk {
         version = release(36)
     }
@@ -25,10 +25,13 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
+            isShrinkResources = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            // Release build, but signed with debug key (testing only)
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
     compileOptions {
